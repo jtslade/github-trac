@@ -108,6 +108,7 @@ class GithubPlugin(Component):
             jsondata = simplejson.loads(data)
 
             for i in jsondata['commits']:
+                self.env.log.debug("Start processing commit: %s" % i)
                 self.hook.process(i, status)
 
 
